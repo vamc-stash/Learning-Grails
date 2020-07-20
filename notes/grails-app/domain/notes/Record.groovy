@@ -6,8 +6,8 @@ class Record {
 	String notes
 	static belongsTo = [customer:Customer]
 
-    static constraints = {
-    	notename(unique:true)
-    	notes(nullable:true)
-	    }
+	static constraints = {
+		notename(unique:true)
+		notes(nullable:true)
+	}
 }
