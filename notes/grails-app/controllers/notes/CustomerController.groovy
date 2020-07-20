@@ -2,18 +2,23 @@ package notes
 
 class CustomerController {
 
-	static scaffold = Customer
+	// static scaffold = Customer
 
     // def index() { }
     def save = {
 
-    	def customerInstance = new Customer(params)
+        def customerInstance = Customer.findByEmail(params.email)
+        if(customerInstance == null){
 
-    	//customerInstance.save flush:true, failOnError:true
-    	customerInstance.save failOnError:true
-
-    	//redirect action:"show", id: customerInstance.id
-    	redirect(controller:"home", action:"signin")
+            customerInstance = new Customer(params)
+            customerInstance.save failOnError:true
+            redirect(controller:"home", action:"signin")
+        }
+        else{
+            flash.message = "Email Address Already Exists!!"
+            redirect(controller:'home', action:'signup')
+        }
+    	
     }
 
     def show = {
