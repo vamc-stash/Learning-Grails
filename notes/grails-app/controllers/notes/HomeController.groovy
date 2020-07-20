@@ -1,5 +1,8 @@
 package notes
 
+import grails.gorm.transactions.Transactional
+
+@Transactional
 class HomeController {
 
     def index = { 
