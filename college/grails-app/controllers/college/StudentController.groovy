@@ -27,7 +27,7 @@ class StudentController {
    }
   }
   
-  redirect(controller:'admin', action:'home')
+  redirect(controller:'admin', action:'home', fragment:"student")
  }
 
  def registerCourse() {

@@ -10,9 +10,9 @@ class CourseController {
     flash.message = [info:'Registration is Success', success:true]
    }
    else{
-    flash.message = [info:'Course with same ID Already Exists', , success:false]
+    flash.message = [info:'Course with same ID Already Exists', success:false]
    }
   }
-  redirect(controller:'admin', action:'home')
+  redirect(controller:'admin', action:'home', fragment:"course")
  }
 }

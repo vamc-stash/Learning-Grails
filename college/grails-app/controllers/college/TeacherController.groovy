@@ -27,6 +27,6 @@ class TeacherController {
    }
   }
   
-  redirect(controller:'admin', action:'home')
+  redirect(controller:'admin', action:'home', fragment:"student")
  }
 }
